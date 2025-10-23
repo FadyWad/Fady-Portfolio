@@ -1,8 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fady Wadea | Data Analyst Portfolio</title>
+  <style>
+    :root {
+      --bg-light: #f9fafb;
+      --text-light: #111827;
+      --accent: #0284c7;
+      --bg-dark: #111827;
+      --text-dark: #f3f4f6;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      transition: background 0.3s, color 0.3s;
+    }
+    body.dark {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: auto;
+      padding: 1rem 2rem;
+    }
+    .theme-toggle {
+      cursor: pointer;
+      background: none;
+      border: 1px solid var(--accent);
+      border-radius: 6px;
+      color: var(--accent);
+      padding: 6px 12px;
+      transition: 0.3s;
+    }
+    .theme-toggle:hover {
+      background: var(--accent);
+      color: white;
+    }
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 3rem 2rem;
+    }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.5rem;
+    }
+    .hero img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent);
+    }
+    .hero h1 {
+      font-size: 2rem;
+      margin: 0;
+    }
+    .hero p {
+      max-width: 600px;
+      opacity: 0.9;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      padding: 10px 22px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .btn-primary:hover {
+      opacity: 0.85;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .section-title::after {
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 3px;
+      background: var(--accent);
+      left: 50%;
+      bottom: -10px;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+    .about, .skills, .certifications {
+      text-align: center;
+    }
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 1rem;
+    }
+    .skill {
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 0.9rem;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .project {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      background: white;
+      transition: transform 0.3s;
+    }
+    body.dark .project { background: #1f2937; }
+    .project:hover { transform: translateY(-4px); }
+    .project img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .project-info {
+      padding: 1rem;
+    }
+    .project-info h4 { margin: 0.5rem 0; color: var(--accent); }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
 <body>
+  <header>
+    <div>
       <h2>Fady Wadea</h2>
-     
+      <p>Business Intelligence & Data Analyst</p>
+    </div>
+    <button class="theme-toggle" id="themeToggle">Toggle Mode</button>
+  </header>
+
+  <section class="hero">
+    <img src="https://via.placeholder.com/160" alt="Profile photo" />
+    <h1>Hi, I’m <span style="color: var(--accent)">Fady Wadea</span> — a Business Intelligence & Data Analyst</h1>
+    <p>I transform data into actionable insights using Power BI, SQL, and Python — crafting dashboards and analytical solutions that drive measurable growth and efficiency.</p>
+    <a href="#projects" class="btn-primary">View My Work</a>
+  </section>
+
+  <section class="about">
+    <h3 class="section-title">About</h3>
+    <p>I’m a data-driven professional with 5+ years of experience in transportation analytics. My work focuses on transforming complex data into simple, visual stories that support decision-making and performance optimization.</p>
+  </section>
+
+  <section class="skills">
+    <h3 class="section-title">Skills</h3>
+    <div class="skills-list">
+      <span class="skill">Power BI (DAX, Modeling)</span>
+      <span class="skill">SQL (ETL, CTEs)</span>
+      <span class="skill">Python (pandas, Selenium)</span>
+      <span class="skill">Data Visualization</span>
+      <span class="skill">Dashboard Automation</span>
+      <span class="skill">WebEngage Analytics</span>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h3 class="section-title">Projects</h3>
+    <div class="projects-grid">
+      <div class="project">
+        <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=800" alt="Dashboard project" />
+        <div class="project-info">
+          <h4>Executive Performance Dashboard</h4>
+          <p>Centralized Power BI dashboard consolidating sales, ops & finance KPIs. Reduced reporting time by 40%.</p>
+        </div>
+      </div>
+      <div class="project">
+        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800" alt="Web scraping project" />
+        <div class="project-info">
+          <h4>Competitive Intelligence Scraper</h4>
+          <p>Automated data extraction using Python & Selenium. Supported pricing optimization, boosting sales by 17%.</p>
+        </div>
+      </div>
+      <div class="project">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800" alt="Profitability analysis" />
+        <div class="project-info">
+          <h4>Route Profitability Model</h4>
+          <p>Developed a Power BI model analyzing occupancy, revenue/km & cost — improving average occupancy by 13%.</p>
+        </div>
+      </div>
+      <div class="project">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800" alt="Marketing dashboard" />
+        <div class="project-info">
+          <h4>Marketing Performance Dashboard</h4>
+          <p>Integrated ad data to measure CPR, CTR & ROAS. Automated campaign reporting & ROI tracking.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="certifications">
+    <h3 class="section-title">Certifications</h3>
+    <p>
+      <a href="https://www.credential.net/d43551ee-578e-402b-be46-4bc8eb97963e" target="_blank">Customer Lifecycle Management Expert – MoEngage</a><br>
+      <a href="https://www.sololearn.com/certificates/CT-8AIJG1N3" target="_blank">Python for Data Science – SoloLearn</a><br>
+      <a href="https://www.sololearn.com/certificates/CT-XKJQLLTW" target="_blank">Python Data Structures – SoloLearn</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 Fady Wadea — Portfolio focused on Data Analysis & Dashboards</p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+    });
+  </script>
 </body>
 </html>
